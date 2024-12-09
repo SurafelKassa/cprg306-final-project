@@ -1,28 +1,30 @@
-"use client"
+'use client';
+
 import { useEffect, useState } from "react";
 import Layout from "../components/layout";
-import MovieCriteriaList from "../components/movies-criteria-list";
+import MovieCriteriaList from "../components/movie-criteria-list"; // Corrected path
 
 const MoviesPage = () => {
+    const [initialGenres, setInitialGenres] = useState([]);
 
-  const [initialGenres, setInitialGenres] = useState([]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const genresFromQuery = params.get('genre')
-        ? params.get('genre').split(',').map(id => parseInt(id))
-        : [];
-      setInitialGenres(genresFromQuery);
-    }
-  }, []);
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const params = new URLSearchParams(window.location.search);
+            const genresFromQuery = params.get("genre")
+                ? params
+                      .get("genre")
+                      .split(",")
+                      .map((id) => parseInt(id))
+                : [];
+            setInitialGenres(genresFromQuery);
+        }
+    }, []);
 
     return (
-      <Layout>
-        <MovieCriteriaList genres={initialGenres}/>
-      </Layout>
+        <Layout>
+            <MovieCriteriaList genres={initialGenres} />
+        </Layout>
     );
-  };
-  
-  
-  export default MoviesPage;
+};
+
+export default MoviesPage;

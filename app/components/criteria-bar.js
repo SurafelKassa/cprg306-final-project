@@ -106,20 +106,22 @@ const CriteriaBar = ({setCriteria, initialGenres = []}) => {
     </div>
 
     <div>
-      <label className="block font-bold mb-2">Genres:</label>
-      <div className="flex flex-wrap">
-        {genres.map((genre) => (
-          <button
-            key={genre.id}
-            onClick={() => handleGenreClick(genre.id)}
-            className={`p-2 m-1 border rounded-lg ${
-              selectedGenres.includes(genre.id) ? "bg-blue-500 text-white" : "bg-white"
-            }`}
-          >
-            {genre.name}
-          </button>
-        ))}
-      </div>
+    <label className="block font-bold mb-2">Genres:</label>
+<div className="flex flex-wrap">
+  {Array.isArray(genres) && genres.length > 0 ? (
+    genres.map((genre) => (
+      <button
+        key={genre.id}
+        onClick={() => handleGenreClick(genre.id)}
+        className="m-1 p-2 bg-gray-200 rounded"
+      >
+        {genre.name}
+      </button>
+    ))
+  ) : (
+    <p>No genres available</p>
+  )}
+</div>
     </div>
   </div>
 );

@@ -1,6 +1,6 @@
 "use client"
 import Layout from "./components/layout";
-import MovieGrid from "./Components/movie-grid.js";
+import MovieGrid from "./components/movie-grid";
 import { fetchMovies } from "./_utils/api";
 import { useState,useEffect } from "react";
 

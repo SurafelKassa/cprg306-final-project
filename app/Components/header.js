@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="bg-gray-800 text-white p-4 flex justify-between items-center sticky top-0 z-50">
       <div className="flex space-x-4">
-        <Link href="/" className="text-lg font-bold">CPRG306-Movies</Link>
+        <Link href="/" className="text-lg font-bold">MovieVault</Link>
         <Link href="/movies" className="text-lg">Movies</Link>
       </div>
       <SearchMenu />

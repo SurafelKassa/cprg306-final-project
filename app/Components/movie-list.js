@@ -1,7 +1,7 @@
 "use client"
 import { fetchMovies } from "@/app/_utils/api";
 import { useState,useEffect } from "react";
-import MovieGrid from "./Components/movie-grid.js";
+import MovieGrid from "@/app/components/movie-grid";
 import { getUniqueMovies } from "@/app/_utils/utils";
 
 
